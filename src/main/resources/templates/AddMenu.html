@@ -16,21 +16,19 @@
 
 		<form action="#" th:action="@{/saveMenu}" th:object="${menu}"
 			method="POST">
-			<input type="text" th:field="*{id}"
-				placeholder="Menu Id" class="form-control mb-4 col-4">
-				
-				<input type="text" th:field="*{name}"
-				placeholder="Pizza Name" class="form-control mb-4 col-4">
-				
-				<input type="text" th:field="*{description}"
-				placeholder="Pizza description" class="form-control mb-4 col-4">
-				
-				<button type="submit" class="btn btn-info col-2"> Save Menu</button>
+			<input type="text" th:field="*{id}" placeholder="Menu Id"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{name}" placeholder="Pizza Name"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{description}" placeholder="Pizza description"
+				class="form-control mb-4 col-4">
+
+			<button type="submit" class="btn btn-info col-2">Save Menu</button>
 		</form>
-		
+
 		<hr>
-		
-		<a th:href = "@{/home2}"> Back to Menu List</a>
+
+		<a th:href="@{/home2}"> Back to Menu List</a>
 	</div>
 </body>
 </html>

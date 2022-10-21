@@ -18,26 +18,24 @@ function init() {
 window.onload = init;
 
 </script>
-	
+
 </head>
 <body>
 	<div class="container">
-	<img th:src="@{images/YummyPizza.png}" width = "100px">
-	<br>
-	<br>
+		<img th:src="@{images/YummyPizza.png}" width="100px"> <br>
+		<br>
 		<h1>Yummy Pizza Login</h1>
 
 		<form action="#" th:action="@{/home}" th:object="${LoginDetails}"
 			method="POST">
-				<input type="text" name="Username" value="userName" id="Username"
-				placeholder="Username" class="form-control mb-4 col-4">
-				
-				<input type="password" name="Password" value="password" id="password"
+			<input type="text" name="Username" value="userName" id="Username"
+				placeholder="Username" class="form-control mb-4 col-4"> <input
+				type="password" name="Password" value="password" id="password"
 				placeholder="Password" class="form-control mb-4 col-4">
-				
-				<button type="submit" class="btn btn-info col-2"> LOGIN </button>
+
+			<button type="submit" class="btn btn-info col-2">LOGIN</button>
 		</form>
-		
+
 		<hr>
 	</div>
 </body>
