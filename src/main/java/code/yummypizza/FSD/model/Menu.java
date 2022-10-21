@@ -15,11 +15,11 @@ public class Menu {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name = "pizza")
+	private String pizza;
 	
-	@Column(name = "description")
-	private String description;
+	@Column(name = "sides")
+	private String sides;
 	
 	
 	public long getId() {
@@ -28,17 +28,17 @@ public class Menu {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getPizza() {
+		return pizza;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPizza(String pizza) {
+		this.pizza = pizza;
 	}
-	public String getDescription() {
-		return description;
+	public String getSides() {
+		return sides;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setSides(String sides) {
+		this.sides = sides;
 	}
 	
 	

@@ -34,12 +34,12 @@ public class MenuController {
 		model.addAttribute("login", login);
 		model.addAttribute("userName", login.getUserName());
 		model.addAttribute("password", login.getPassword());
-		return findPaginated(1, "name", "asc", model);	
+		return findPaginated(1, "pizza", "asc", model);	
 	}
 	
 	@RequestMapping(value = "/home2", method = RequestMethod.GET)
 	public String getHomePage(Model model) {
-		return findPaginated(1, "name", "asc", model);	
+		return findPaginated(1, "pizza", "asc", model);	
 	}
 	
 	@GetMapping("/showNewMenuForm")

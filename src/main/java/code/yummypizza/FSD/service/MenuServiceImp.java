@@ -40,7 +40,7 @@ public class MenuServiceImp implements MenuService{
 		if(option.isPresent()) {
 			menu = option.get();
 		}else {
-			throw new RuntimeException("Menu not found for id :"+id);
+			throw new RuntimeException("Menu not found for id : "+id);
 		}
 		
 		return menu;

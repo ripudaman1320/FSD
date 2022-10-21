@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Pizza Menu</title>
+<title>Yummy Pizza</title>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -40,7 +40,7 @@ function myFunction(){
 		</div>
 
 		<br> <input type="text" id="search" onkeyup="myFunction()"
-			placeholder="Search for my pizza..." title="PIZZA"> <br>
+			placeholder="Search menu..." title="YUMMY PIZZA"> <br>
 		<br>
 
 
@@ -51,19 +51,19 @@ function myFunction(){
 						th:href="@{'/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">
 							ID</a></th>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDir=' + ${reverseSortDir}}">
-							Name</a></th>
+						th:href="@{'/page/' + ${currentPage} + '?sortField=pizza&sortDir=' + ${reverseSortDir}}">
+							Pizza</a></th>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=description&sortDir=' + ${reverseSortDir}}">
-							Description</a></th>
+						th:href="@{'/page/' + ${currentPage} + '?sortField=sides&sortDir=' + ${reverseSortDir}}">
+							Sides</a></th>
 					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody id="tablePizza">
 				<tr th:each="menu : ${listMenu}">
 					<td th:text="${menu.id}"></td>
-					<td th:text="${menu.name}"></td>
-					<td th:text="${menu.description}"></td>
+					<td th:text="${menu.pizza}"></td>
+					<td th:text="${menu.sides}"></td>
 					<td><a th:href="@{/showFormForUpdate/{id}(id=${menu.id})}"
 						class="btn btn-primary">Update</a> <a
 						th:href="@{/deleteMenu/{id}(id=${menu.id})}"

@@ -29,8 +29,9 @@ window.onload = init;
 		<form action="#" th:action="@{/home}" th:object="${LoginDetails}"
 			method="POST">
 			<input type="text" name="Username" value="userName" id="Username"
-				placeholder="Username" class="form-control mb-4 col-4"> <input
-				type="password" name="Password" value="password" id="password"
+				placeholder="Username" class="form-control mb-4 col-4"> 
+			
+			<input type="password" name="Password" value="password" id="password"
 				placeholder="Password" class="form-control mb-4 col-4">
 
 			<button type="submit" class="btn btn-info col-2">LOGIN</button>
