@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import code.yummypizza.FSD.model.Login;
 import code.yummypizza.FSD.model.Menu;
 import code.yummypizza.FSD.service.MenuService;
-//import code.yummypizza.FSD.service.MenuServiceImp;
 
 @Controller
 public class MenuController {
@@ -24,29 +23,13 @@ public class MenuController {
 	@Autowired
 	private MenuService menuservice;
 	
-//	@RequestMapping("/")
-//	public String getMenu() {
-//		return "Ripu";
-//	}
-//	
-//	@RequestMapping("/menu")
-//	public List<Menu> getAllMenu(){
-//		
-//		return (List<Menu>) repo.findAll();
-//	}
-	
-	
-	@GetMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getLoginPage(Model model) {
 		return "LoginPage";
 	}
-	
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	@GetMapping("/home")
+
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public String viewHomePage(Model model) {
-//	        model.addAttribute("listMenu", menuservice.getAllMenu());
-//	        return "index";
 		Login login = new Login();
 		model.addAttribute("login", login);
 		model.addAttribute("userName", login.getUserName());
@@ -54,9 +37,14 @@ public class MenuController {
 		return findPaginated(1, "name", "asc", model);	
 	}
 	
+	@RequestMapping(value = "/home2", method = RequestMethod.GET)
+	public String getHomePage(Model model) {
+		return findPaginated(1, "name", "asc", model);	
+	}
+	
 	@GetMapping("/showNewMenuForm")
     public String showNewMenuForm(Model model) {
-        // create model attribute to bind form data
+
         Menu menu= new Menu();
         model.addAttribute("menu", menu);
         return "AddMenu";
@@ -64,18 +52,16 @@ public class MenuController {
 	
 	@RequestMapping(value = "/saveMenu", method = RequestMethod.POST)
 	public String saveMenu(@ModelAttribute("menu") Menu menu) {
-        // save employee to database
+
         menuservice.saveMenu(menu);
-        return "redirect:/";
+        return "redirect:/home2";
     }
 	
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 
-        // get employee from the service
         Menu menu = menuservice.getMenuById(id);
 
-        // set employee as a model attribute to pre-populate the form
         model.addAttribute("menu", menu);
         return "UpdateMenu";
     }
@@ -83,9 +69,8 @@ public class MenuController {
 	 @GetMapping("/deleteMenu/{id}")
 	    public String deleteMenu(@PathVariable(value = "id") long id) {
 
-	        // call delete employee method 
 	        this.menuservice.deleteMenuById(id);
-	        return "redirect:/";
+	        return "redirect:/home2";
 	    }
 	 
 	 @GetMapping("/page/{pageNo}")

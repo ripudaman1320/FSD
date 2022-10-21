@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Pizza Menu Login</title>
+<title>Yummy Pizza</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -22,9 +22,7 @@ window.onload = init;
 </head>
 <body>
 	<div class="container">
-	<!-- <div class="bg"> -->
-	<!-- <img alt="" src="src/main/resources/images/YummyPizza.jpg"> -->
-	<img th:src="@{/images/YummyPizza.jpg}">
+	<img th:src="@{images/YummyPizza.png}" width = "100px">
 	<br>
 	<br>
 		<h1>Yummy Pizza Login</h1>
@@ -41,9 +39,6 @@ window.onload = init;
 		</form>
 		
 		<hr>
-		
-		<!-- <a th:href = "@{/}"> Back to Menu List</a> -->
-	<!-- </div> -->
 	</div>
 </body>
 </html>
