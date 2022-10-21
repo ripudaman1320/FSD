@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pizza Menu Login</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<!-- <style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("src/main/resources/images/YummyPizza.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style> -->
+
+<script type="text/javascript">
+
+function init() {
+    // Clear forms here
+    document.getElementById("Username").value = "";
+    document.getElementById("password").value = "";
+}
+window.onload = init;
+
+</script>
+	
+</head>
+<body>
+	<div class="container">
+	<!-- <div class="bg"> -->
+	<!-- <img alt="" src="src/main/resources/images/YummyPizza.jpg"> -->
+	<img th:src="@{/images/YummyPizza.jpg}">
+	<br>
+	<br>
+		<h1>Yummy Pizza Login</h1>
+
+		<form action="#" th:action="@{/home}" th:object="${LoginDetails}"
+			method="POST">
+				<input type="text" name="Username" value="userName" id="Username"
+				placeholder="Username" class="form-control mb-4 col-4">
+				
+				<input type="password" name="Password" value="password" id="password"
+				placeholder="Password" class="form-control mb-4 col-4">
+				
+				<button type="submit" class="btn btn-info col-2"> LOGIN </button>
+		</form>
+		
+		<hr>
+		
+		<!-- <a th:href = "@{/}"> Back to Menu List</a> -->
+	<!-- </div> -->
+	</div>
+</body>
+</html>
