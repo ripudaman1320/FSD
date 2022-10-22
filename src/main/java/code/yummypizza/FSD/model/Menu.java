@@ -11,8 +11,16 @@ import javax.persistence.Table;
 @Table(name="menu")
 public class Menu {
 
+	public Menu(long id, String pizza, String sides) {
+		super();
+		this.id = id;
+		this.pizza = pizza;
+		this.sides = sides;
+	}
+	
+	public Menu() {}
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(name = "pizza")
