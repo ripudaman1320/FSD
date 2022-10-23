@@ -23,6 +23,7 @@ public class MenuController {
 	@Autowired
 	private MenuService menuservice;
 	
+//	login page
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getLoginPage(Model model) {
 		return "LoginPage";
@@ -37,11 +38,13 @@ public class MenuController {
 		return findPaginated(1, "pizza", "asc", model);	
 	}
 	
+//	Get menu items
 	@RequestMapping(value = "/home2", method = RequestMethod.GET)
 	public String getHomePage(Model model) {
 		return findPaginated(1, "pizza", "asc", model);	
 	}
 	
+//	Add menu items
 	@GetMapping("/showNewMenuForm")
     public String showNewMenuForm(Model model) {
 
@@ -50,6 +53,7 @@ public class MenuController {
         return "AddMenu";
     }
 	
+// save menu item
 	@RequestMapping(value = "/saveMenu", method = RequestMethod.POST)
 	public String saveMenu(@ModelAttribute("menu") Menu menu) {
 
@@ -57,6 +61,7 @@ public class MenuController {
         return "redirect:/home2";
     }
 	
+//	Update menu item
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 
@@ -66,6 +71,7 @@ public class MenuController {
         return "UpdateMenu";
     }
 	
+//	delete menu item
 	 @GetMapping("/deleteMenu/{id}")
 	    public String deleteMenu(@PathVariable(value = "id") long id) {
 
