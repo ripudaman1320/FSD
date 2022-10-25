@@ -44,7 +44,7 @@ public class MenuController {
 		return findPaginated(1, "pizza", "asc", model);	
 	}
 	
-//	Add menu items
+//	Add model menu items
 	@GetMapping("/showNewMenuForm")
     public String showNewMenuForm(Model model) {
 
